@@ -1,3 +1,22 @@
-<p>
-  planta-list works!
-</p>
+<!-- Suponiendo que estás dentro de un componente Angular -->
+<div class="container-fluid">
+  <h1>Vivero el otoño</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre Común</th>
+        <th>Tipo</th>
+        <th>Clima</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let planta of plantas">
+        <td>{{ planta.id }}</td>
+        <td>{{ planta.nombre_comun }}</td>
+        <td>{{ planta.tipo }}</td>
+        <td>{{ planta.clima }} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
