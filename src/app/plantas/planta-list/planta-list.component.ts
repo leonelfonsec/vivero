@@ -18,14 +18,16 @@ export class PlantaListComponent implements OnInit {
   getPlantas(): void {
     this.plantaService.getPlantas().subscribe((plantas) => {
       this.plantas = plantas;
-
-      for (let i = 0; i < plantas.length; i++) {
-        console.log(plantas[i]); // Imprime cada elemento del arreglo
-      }
     });
   }
 
-
+  contarPlantasInterior(): number {
+    return this.plantas.filter(planta => planta.tipo === 'Interior').length;
+  } 
+  
+  contarPlantasExterior(): number {
+    return this.plantas.filter(planta => planta.tipo === 'Exterior').length;
+  }
 
   ngOnInit() {
     this.getPlantas();
